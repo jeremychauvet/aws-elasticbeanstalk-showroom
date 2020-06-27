@@ -48,6 +48,19 @@ As we will provision database with 5 Gb of storage, this will add 0.64 USD per m
 
 ![db.t3.micro pricing review](docs/pricing/rds/db.t3.micro.png)
 
+## S3
+To be estimated later (less than 1 USD per month).
+
+## Total cost
+|       | Service | Cost per month |
+|-------|---------|----------------|
+|       | EC2     | 7.59 USD       |
+|       | RDS     | 13,14 USD      |
+| Total |         | 20.73 USD      |
+
+## How to control costs
+TODO: how to create budget on AWS.
+
 # Links
 AWS Elastic Beanstalk release notes : https://docs.aws.amazon.com/elasticbeanstalk/latest/relnotes/welcome.html
 Deploying a Symfony application to Elastic Beanstalk : https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/php-symfony-tutorial.html (Outdated Symfony version /!\)
