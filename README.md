@@ -23,10 +23,10 @@ TODO
 * EC2 instance type: t2.micro
 * Platform: PHP 7.4 running on 64bit Amazon Linux 2/3.0.3
 
-## Logical schema
+## Logical diagram
 ![Logical architecture review](docs/architecture/logical.png)
 
-## Network oriented schema
+## Network oriented diagram
 ![Network architecture review](docs/architecture/network.png)
 
 # Billing
@@ -56,7 +56,7 @@ We will use t3.micro as this new type has more more compute and cost less than t
 |------------------|-----|--------|-----------------------------|
 | db.t3.micro      | 2   | 1      | 13.14 USD                   |
 
-As we will provision database with 5 Gb of storage, this will add 0.64 USD per month on the billing. We assume no backup storage as this a demo of Elastic Beanstalk.
+As we will provision database with 5 Gb of storage, this will add 0.64 USD per month on the billing. We assume no backup storage as this is a demo of Elastic Beanstalk.
 
 ![db.t3.micro pricing review](docs/pricing/rds/db.t3.micro.png)
 
