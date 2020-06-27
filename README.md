@@ -15,7 +15,10 @@ TODO
 * Platform: PHP 7.4 running on 64bit Amazon Linux 2/3.0.3
 
 ## Logical schema
+![Logical architecture review](docs/architecture/logical.png)
 
+## Network oriented schema
+![Network architecture review](docs/architecture/network.png)
 
 # Billing
 > Prices are calculated for "Frankurt" region (eu-central-1) on 27 june 2020. Change with time and different region.
