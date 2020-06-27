@@ -3,9 +3,18 @@ Template to create a Symfony website on AWS Elasticbeanstalk
 
 # Prerequisites
 1. Create an AWS account : https://aws.amazon.com/fr/console/ (french link, but you will be redirected on the correct locale)
-2. 
+
+TODO
+
 
 # What will be created
+We will use Terraform to create this showroom. This section explains what Terraform will create : 
+* `1 EC2 instance` (t3.micro) via AWS Elastic Beanstalk
+* `1 NLB` via AWS Elastic Beanstalk
+* `1 RDS database` (MySQL)
+* `1 DNS name` via AWS Elastic Beanstalk
+
+# How to import this showroom in you AWS account
 TODO
 
 # Architecture
