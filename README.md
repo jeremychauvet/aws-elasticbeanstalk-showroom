@@ -3,9 +3,9 @@ Template to create a Symfony website on AWS Elasticbeanstalk
 
 # Prerequisites
 1. Create an AWS account : https://aws.amazon.com/fr/console/ (french link, but you will be redirected on the correct locale)
-
-TODO
-
+2. Create IAM user with correct rights (to be explained), check "Programmatic access" and get access and secret keys.
+3. Install AWS CLI on your computer
+4. Add a profile called `elasticbeanstalk-showroom` and fill credentials.
 
 # What will be created
 We will use Terraform to create this showroom. This section explains what Terraform will create : 
@@ -14,8 +14,11 @@ We will use Terraform to create this showroom. This section explains what Terraf
 * `1 RDS database` (MySQL)
 * `1 DNS name` via AWS Elastic Beanstalk
 
+# Terraform state storage
+TODO: s3 backend.
+
 # How to import this showroom in you AWS account
-TODO
+
 
 # Architecture
 ## Description
@@ -79,3 +82,5 @@ TODO: how to create budget on AWS.
 * Deploying a Symfony application to Elastic Beanstalk : https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/php-symfony-tutorial.html (Outdated Symfony version /!\)
 
 * AWS Pricing Calculator : https://calculator.aws/#/createCalculator
+
+* AWS named profiles : https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html
