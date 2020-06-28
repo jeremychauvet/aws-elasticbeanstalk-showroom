@@ -1,25 +1,6 @@
 # elasticbeanstalk-showroom
 Template to create a Symfony website on AWS Elasticbeanstalk
 
-# Prerequisites
-1. Create an AWS account : https://aws.amazon.com/fr/console/ (french link, but you will be redirected on the correct locale)
-2. Create IAM user with correct rights (to be explained), check "Programmatic access" and get access and secret keys.
-3. Install AWS CLI on your computer
-4. Add a profile called `elasticbeanstalk-showroom` and fill credentials.
-
-# What will be created
-We will use Terraform to create this showroom. This section explains what Terraform will create : 
-* `1 EC2 instance` (t3.micro) via AWS Elastic Beanstalk
-* `1 NLB` via AWS Elastic Beanstalk
-* `1 RDS database` (MySQL)
-* `1 DNS name` via AWS Elastic Beanstalk
-
-# Terraform state storage
-TODO: s3 backend.
-
-# How to import this showroom in you AWS account
-
-
 # Architecture
 ## Description
 * Configuration presets: Single instance (Free Tier eligible)
@@ -75,6 +56,28 @@ To be estimated later (less than 1 USD per month).
 
 ## How to control costs
 TODO: how to create budget on AWS.
+
+# How to import this showroom in you AWS account
+
+## What will be created
+We will use Terraform to create this showroom. This section explains what Terraform will create : 
+* `1 EC2 instance` (t3.micro) via AWS Elastic Beanstalk
+* `1 NLB` via AWS Elastic Beanstalk
+* `1 RDS database` (MySQL)
+* `1 DNS name` via AWS Elastic Beanstalk
+
+### Terraform state storage
+TODO: s3 backend.
+
+### Note
+Terraform auto approve is not set to remind you each action is not without danger
+
+## Prerequisites
+1. Create an AWS account : https://aws.amazon.com/fr/console/ (french link, but you will be redirected on the correct locale)
+2. Create IAM user with correct rights (to be explained), check "Programmatic access" and get access and secret keys.
+3. Install AWS CLI on your computer
+4. Add a profile called `elasticbeanstalk-showroom` and fill credentials.  
+
 
 # Links
 * AWS Elastic Beanstalk release notes : https://docs.aws.amazon.com/elasticbeanstalk/latest/relnotes/welcome.html
