@@ -1,5 +1,6 @@
 module "vpc" {
   source = "terraform-aws-modules/vpc/aws"
+  version = "2.44.0"
 
   name = "ebshowroom-vpc"
   cidr = "172.32.0.0/16"
@@ -18,6 +19,7 @@ module "vpc" {
 
 module "app_sg" {
   source = "terraform-aws-modules/security-group/aws"
+  version = "3.11.0"
 
   name        = "app-sg"
   description = "Allow traffic from NLB to EB."
@@ -29,6 +31,7 @@ module "app_sg" {
 
 module "database_sg" {
   source = "terraform-aws-modules/security-group/aws"
+  version = "3.11.0"
 
   name        = "database-sg"
   description = "Allow traffic from EB to RDS."
