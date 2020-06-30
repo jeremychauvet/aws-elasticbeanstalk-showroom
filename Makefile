@@ -8,3 +8,6 @@ plan:
 
 apply:
 	terraform apply -var="aws_profile=elasticbeanstalk-showroom" -var="aws_region=eu-central-1"
+
+destroy:
+	terraform destroy -var="aws_profile=elasticbeanstalk-showroom" -var="aws_region=eu-central-1"	
