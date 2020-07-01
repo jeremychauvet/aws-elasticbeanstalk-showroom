@@ -44,6 +44,10 @@ As we will provision database with 5 Gb of storage, this will add 0.64 USD per m
 
 ![db.t3.micro pricing review](docs/pricing/rds/db.t3.micro.png)
 
+## Networking
+
+TODO: NAT gateway
+
 ## S3
 To be estimated later (less than 1 USD per month).
 
