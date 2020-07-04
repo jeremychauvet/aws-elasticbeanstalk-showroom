@@ -1,11 +1,29 @@
 # elasticbeanstalk-showroom
 Template to create a Symfony website on AWS Elasticbeanstalk
 
+![Lint Code Base](https://github.com/jeremychauvet/elasticbeanstalk-showroom/workflows/Lint%20Code%20Base/badge.svg?branch=master&event=status)
+
 # Architecture
 ## Description
 * Configuration presets: Single instance (Free Tier eligible)
 * EC2 instance type: t2.micro
 * Platform: PHP 7.4 running on 64bit Amazon Linux 2/3.0.3
+
+## Network design
+
+Network CIDR : 172.31.0.0/16
+
+### Public subnet
+
+Used for NAT purpose.
+
+Network CIDR : 172.31.1.0/24
+Network CIDR : 172.31.2.0/24
+
+### Private subnet
+
+Network CIDR : 172.31.3.0/24
+Network CIDR : 172.31.4.0/24
 
 ## Logical diagram
 ![Logical architecture review](docs/architecture/logical.png)
