@@ -1,0 +1,28 @@
+---
+  name: Lint Code Base
+  # Documentation:
+  # https://help.github.com/en/articles/workflow-syntax-for-github-actions
+  
+  on:
+    push:
+      branches-ignore: [staging]
+      # Remove the line above to run when pushing to master
+    pull_request:
+      branches: [master]
+
+  jobs:
+    build:
+      name: Lint Code Base
+      # Set the agent to run on
+      runs-on: ubuntu-latest
+      steps:
+        # Checkout the code base
+        - name: Checkout Code
+          uses: actions/checkout@v2
+        # Run Linter against code base
+        - name: Lint Code Base
+          uses: docker://github/super-linter:v3
+          env:
+            VALIDATE_ALL_CODEBASE: false
+            VALIDATE_TERRAFORM: true
+            DEFAULT_BRANCH: master
