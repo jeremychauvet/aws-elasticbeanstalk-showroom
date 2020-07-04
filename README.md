@@ -1,7 +1,7 @@
 # elasticbeanstalk-showroom
 Template to create a Symfony website on AWS Elasticbeanstalk
 
-![Lint Code Base](https://github.com/jeremychauvet/elasticbeanstalk-showroom/workflows/Lint%20Code%20Base/badge.svg?branch=master&event=status)
+![Lint Code Base](https://github.com/jeremychauvet/elasticbeanstalk-showroom/workflows/Lint%20Code%20Base/badge.svg)
 
 # Architecture
 ## Description
