@@ -1,29 +1,29 @@
-# elasticbeanstalk-showroom
-Template to create a Symfony website on AWS Elasticbeanstalk
+# "AWS Elasticbeanstalk x Symfony" showroom
+This reposity is a template of ressources that allow you to create a Symfony website on AWS Elasticbeanstalk.
 
 ![Lint Code Base](https://github.com/jeremychauvet/elasticbeanstalk-showroom/workflows/Lint%20Code%20Base/badge.svg)
 
-# Architecture
-## Description
-* Configuration presets: Single instance (Free Tier eligible)
-* EC2 instance type: t2.micro
-* Platform: PHP 7.4 running on 64bit Amazon Linux 2/3.0.3
+# Table of contents
+1. [Architecture overview](#architecture)
+2. [Cost estimation](#cost-estimation)
+3. [Manage billing drift](#billing-drift)
+4. [Installation](#installation)
+5. [Roadmap](#roadmap)
+6. [Links](#links)
+
+<a name="architecture"></a>
+# Architecture overview
 
 ## Network design
 
-Network CIDR : 172.31.0.0/16
+Network CIDR : `172.31.0.0/16`
 
-### Public subnet
-
-Used for NAT purpose.
-
-Network CIDR : 172.31.1.0/24
-Network CIDR : 172.31.2.0/24
-
-### Private subnet
-
-Network CIDR : 172.31.3.0/24
-Network CIDR : 172.31.4.0/24
+* Public subnets (Used for NAT purpose) : 
+  * `172.31.1.0/24`
+  * `172.31.2.0/24`
+* Private subnets : 
+  * `172.31.3.0/24`
+  * `172.31.4.0/24`  
 
 ## Logical diagram
 ![Logical architecture review](docs/architecture/logical.png)
@@ -31,8 +31,9 @@ Network CIDR : 172.31.4.0/24
 ## Network oriented diagram
 ![Network architecture review](docs/architecture/network.png)
 
-# Billing
-> Prices are calculated for "Frankurt" region (eu-central-1) on 27 june 2020. Change with time and different region.
+<a name="cost-estimation"></a>
+# Cost estimation 
+> :warning: Prices are calculated for "Frankurt" region (eu-central-1) on 27 june 2020. Values may change with time and different region.
 
 We use AWS Pricing generator to complete this section : https://calculator.aws/#/createCalculator
 
@@ -76,31 +77,36 @@ To be estimated later (less than 1 USD per month).
 |       | RDS     | 13,14 USD      |
 | Total |         | 20.73 USD      |
 
-## How to control costs
-TODO: how to create budget on AWS.
+<a name="billing-drift"></a>
+# Manage billing drift
+As infrastructures can change over time, it is very important to manage billing drift and by predictable on how many it costs.
 
-# How to import this showroom in you AWS account
+I use https://github.com/aliscott/infracost to get cost hourly and monthly estimates for a Terraform project.
+Please install it with https://github.com/aliscott/infracost#installation
 
-## What will be created
-We will use Terraform to create this showroom. This section explains what Terraform will create : 
-* `1 EC2 instance` (t3.micro) via AWS Elastic Beanstalk
-* `1 NLB` via AWS Elastic Beanstalk
-* `1 RDS database` (MySQL)
-* `1 DNS name` via AWS Elastic Beanstalk
+Thanks to Github actions, this tool can be used to automatically add a PR comment showing the cost estimate diff between a pull request and the master branch whenever a .tf file changes.
 
-### Terraform state storage
-TODO: s3 backend.
-
-### Note
-Terraform auto approve is not set to remind you each action is not without danger
+<a name="installation"></a>
+# Installation
 
 ## Prerequisites
 1. Create an AWS account : https://aws.amazon.com/fr/console/ (french link, but you will be redirected on the correct locale)
 2. Create IAM user with correct rights (to be explained), check "Programmatic access" and get access and secret keys.
 3. Install AWS CLI on your computer
-4. Add a profile called `elasticbeanstalk-showroom` and fill credentials.  
+4. Add a profile called `elasticbeanstalk-showroom` and fill credentials.
+
+## It's show time
+1. `make init`
+2. `make apply`
+
+<a name="roadmap"></a>
+# Roadmap
+* Add linters
+* Add CI/CD part this codeCommit, codeBuild, codePipeline 
+* Add Symfony template
 
 
+<a name="links"></a>
 # Links
 * AWS Elastic Beanstalk release notes : https://docs.aws.amazon.com/elasticbeanstalk/latest/relnotes/welcome.html
 
