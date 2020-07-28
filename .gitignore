@@ -31,3 +31,6 @@ override.tf.json
 # Infracost.
 plan.save
 plan.json
+
+# MacOS.
+.DS_Store
