@@ -1,5 +1,6 @@
-# "AWS Elasticbeanstalk x Symfony" showroom
-This reposity is a template of ressources that allow you to create a Symfony website on AWS Elasticbeanstalk.
+![showroom-hero](docs/elasticbeanstalk-showroom-hero.png)
+
+This repository is a template of ressources that allow you to create a Symfony website on AWS Elasticbeanstalk.
 
 ![Lint Code Base](https://github.com/jeremychauvet/elasticbeanstalk-showroom/workflows/Lint%20Code%20Base/badge.svg)
 
