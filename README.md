@@ -91,10 +91,18 @@ Thanks to Github actions, this tool can be used to automatically add a PR commen
 # Installation
 
 ## Prerequisites
+
+### AWS
 1. Create an AWS account : https://aws.amazon.com/fr/console/ (french link, but you will be redirected on the correct locale)
 2. Create IAM user with correct rights (to be explained), check "Programmatic access" and get access and secret keys.
 3. Install AWS CLI on your computer
 4. Add a profile called `elasticbeanstalk-showroom` and fill credentials.
+
+### Development
+1. [only for developpers] Please install `precommit` : https://pre-commit.com/
+2. [only for developpers] Please run command `pre-commit install`
+3. [only for developpers] Please install `terraform-docs` : https://github.com/terraform-docs/terraform-docs
+3. [only for developpers] Please install `tflint` : https://github.com/terraform-linters/tflint
 
 ## It's show time
 1. `make init`
@@ -102,7 +110,6 @@ Thanks to Github actions, this tool can be used to automatically add a PR commen
 
 <a name="roadmap"></a>
 # Roadmap
-* Add linters
 * Add CI/CD part this codeCommit, codeBuild, codePipeline 
 * Add Symfony template
 
