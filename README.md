@@ -3,6 +3,7 @@
 This repository is a template of ressources that allow you to create a Symfony website on AWS Elasticbeanstalk.
 
 ![Lint Code Base](https://github.com/jeremychauvet/elasticbeanstalk-showroom/workflows/Lint%20Code%20Base/badge.svg)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 
 # Table of contents
 1. [Architecture overview](#architecture)
