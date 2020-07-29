@@ -95,9 +95,126 @@ Thanks to Github actions, this tool can be used to automatically add a PR commen
 
 ### AWS
 1. Create an AWS account : https://aws.amazon.com/fr/console/ (french link, but you will be redirected on the correct locale)
-2. Create IAM user with correct rights (to be explained), check "Programmatic access" and get access and secret keys.
-3. Install AWS CLI on your computer
-4. Add a profile called `elasticbeanstalk-showroom` and fill credentials.
+2. Create IAM user with correct rights : 
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "elasticbeanstalk:*",
+                "ec2:*",
+                "s3:*",
+                "ecs:*",
+                "ecr:*",
+                "elasticloadbalancing:*",
+                "autoscaling:*",
+                "cloudwatch:*",
+                "s3:*",
+                "sns:*",
+                "cloudformation:*",
+                "dynamodb:*",
+                "rds:*",
+                "sqs:*",
+                "logs:*",
+                "iam:GetPolicyVersion",
+                "iam:GetRole",
+                "iam:PassRole",
+                "iam:ListRolePolicies",
+                "iam:ListAttachedRolePolicies",
+                "iam:ListInstanceProfiles",
+                "iam:ListRoles",
+                "iam:ListServerCertificates",
+                "iam:CreateServiceLinkedRole",
+                "acm:DescribeCertificate",
+                "acm:ListCertificates",
+                "codebuild:CreateProject",
+                "codebuild:DeleteProject",
+                "codebuild:BatchGetBuilds",
+                "codebuild:StartBuild",
+                "sts:AssumeRole"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:AddRoleToInstanceProfile",
+                "iam:CreateInstanceProfile",
+                "iam:CreateRole"
+            ],
+            "Resource": [
+                "arn:aws:iam::*:role/aws-elasticbeanstalk*",
+                "arn:aws:iam::*:instance-profile/aws-elasticbeanstalk*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:CreateServiceLinkedRole"
+            ],
+            "Resource": [
+                "arn:aws:iam::*:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling*"
+            ],
+            "Condition": {
+                "StringLike": {
+                    "iam:AWSServiceName": "autoscaling.amazonaws.com"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:CreateServiceLinkedRole"
+            ],
+            "Resource": [
+                "arn:aws:iam::*:role/aws-service-role/elasticbeanstalk.amazonaws.com/AWSServiceRoleForElasticBeanstalk*"
+            ],
+            "Condition": {
+                "StringLike": {
+                    "iam:AWSServiceName": "elasticbeanstalk.amazonaws.com"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:CreateServiceLinkedRole"
+            ],
+            "Resource": [
+                "arn:aws:iam::*:role/aws-service-role/elasticloadbalancing.amazonaws.com/AWSServiceRoleForElasticLoadBalancing*"
+            ],
+            "Condition": {
+                "StringLike": {
+                    "iam:AWSServiceName": "elasticloadbalancing.amazonaws.com"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:AttachRolePolicy"
+            ],
+            "Resource": "arn:aws:iam::*:role/aws-elasticbeanstalk*",
+            "Condition": {
+                "StringLike": {
+                    "iam:PolicyArn": [
+                        "arn:aws:iam::aws:policy/AWSElasticBeanstalk*",
+                        "arn:aws:iam::aws:policy/service-role/AWSElasticBeanstalk*"
+                    ]
+                }
+            }
+        }
+    ]
+}
+
+
+
+```
+3. check "Programmatic access" and get access and secret keys.
+4. Install AWS CLI on your computer
+5. Add a profile called `elasticbeanstalk-showroom` and fill credentials.
 
 ### Development
 1. [only for developpers] Please install `precommit` : https://pre-commit.com/
@@ -124,3 +241,6 @@ Thanks to Github actions, this tool can be used to automatically add a PR commen
 * AWS Pricing Calculator : https://calculator.aws/#/createCalculator
 
 * AWS named profiles : https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html
+
+# Thanks to
+Tomas Fagerbekk (https://gist.github.com/tomfa) : https://gist.github.com/tomfa/6fc429af5d598a85e723b3f56f681237
