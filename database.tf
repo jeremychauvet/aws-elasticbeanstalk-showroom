@@ -7,6 +7,7 @@ module "rds" {
 
   # Database engine parameters.
   engine               = "mysql"
+  family               = "mysql5.7"
   major_engine_version = "5.7"
   engine_version       = "5.7.30"
   instance_class       = "db.t3.micro"
