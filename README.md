@@ -218,10 +218,10 @@ Thanks to Github actions, this tool can be used to automatically add a PR commen
 5. Add a profile called `elasticbeanstalk-showroom` and fill credentials.
 
 ### Development
-1. [only for developpers] Please install `precommit` : https://pre-commit.com/
-2. [only for developpers] Please run command `pre-commit install`
-3. [only for developpers] Please install `terraform-docs` : https://github.com/terraform-docs/terraform-docs
-3. [only for developpers] Please install `tflint` : https://github.com/terraform-linters/tflint
+1. Please install `precommit` : https://pre-commit.com/
+2. Please run command `pre-commit install`
+3. Please install `terraform-docs` : https://github.com/terraform-docs/terraform-docs
+3. Please install `tflint` : https://github.com/terraform-linters/tflint
 
 ## It's show time
 1. `make init`
@@ -237,11 +237,11 @@ Thanks to Github actions, this tool can be used to automatically add a PR commen
 # Links
 * AWS Elastic Beanstalk release notes : https://docs.aws.amazon.com/elasticbeanstalk/latest/relnotes/welcome.html
 
-* Deploying a Symfony application to Elastic Beanstalk : https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/php-symfony-tutorial.html (Outdated Symfony version /!\)
+* Deploying a Symfony application to Elastic Beanstalk : https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/php-symfony-tutorial.html ( :warning: Outdated Symfony version)
 
 * AWS Pricing Calculator : https://calculator.aws/#/createCalculator
 
 * AWS named profiles : https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html
 
-# Thanks to
+# Thanks
 Tomas Fagerbekk (https://gist.github.com/tomfa) : https://gist.github.com/tomfa/6fc429af5d598a85e723b3f56f681237
