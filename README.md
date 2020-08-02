@@ -36,6 +36,7 @@ Network CIDR : `172.31.0.0/16`
 <a name="cost-estimation"></a>
 # Cost estimation 
 > :warning: Prices are calculated for "Frankurt" region (eu-central-1) on 27 june 2020. Values may change with time and different region.
+> This showroom is designed to fit as possible in AWS Free Tier. Cost should be lower than expected on the below section.
 
 We use AWS Pricing generator to complete this section : https://calculator.aws/#/createCalculator
 
