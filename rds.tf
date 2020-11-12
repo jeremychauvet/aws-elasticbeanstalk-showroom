@@ -1,6 +1,6 @@
 module "rds" {
   source  = "terraform-aws-modules/rds/aws"
-  version = "2.16.0"
+  version = "2.20.0"
 
   # Database name shown in the console.
   identifier = "ebshowroom"
