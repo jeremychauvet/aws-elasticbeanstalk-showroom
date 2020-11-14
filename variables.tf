@@ -14,7 +14,7 @@ variable "tags" {
   description = "Tags used for resource group and billing."
   type        = map(string)
   default = {
-    Project     = "ElasticBeanstalk Showroom"
-    CreatedBy   = "Terraform"
+    Project   = "ElasticBeanstalk Showroom"
+    CreatedBy = "Terraform"
   }
 }
