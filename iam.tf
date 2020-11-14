@@ -63,7 +63,7 @@ resource "aws_iam_instance_profile" "elasticbeanstalk_instance" {
 }
 
 resource "aws_iam_role" "elasticbeanstalk_instance" {
-  name               = "elasticbeanstalk-ec2-role"
+  name               = "elasticbeanstalk-showroom-ec2-role"
   assume_role_policy = <<EOF
 {
   "Version": "2012-10-17",
@@ -82,12 +82,12 @@ EOF
 }
 
 resource "aws_iam_instance_profile" "elasticbeanstalk_ec2" {
-  name = "elasticbeanstalk-ec2-user"
+  name = "elasticbeanstalk-showroom-ec2-user"
   role = aws_iam_role.elasticbeanstalk_ec2.name
 }
 
 resource "aws_iam_role" "elasticbeanstalk_ec2" {
-  name               = "elasticbeanstalk-ec2-role"
+  name               = "elasticbeanstalk-showroom-ec2-role"
   assume_role_policy = <<EOF
 {
   "Version": "2008-10-17",
