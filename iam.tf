@@ -1,6 +1,6 @@
 resource "aws_iam_instance_profile" "s3_service" {
-  name  = "s3-service-user"
-  roles = ["${aws_iam_role.s3_service.name}"]
+  name = "s3-service-user"
+  role = aws_iam_role.s3_service.name
 }
 
 resource "aws_iam_role" "s3_service" {
@@ -23,8 +23,8 @@ EOF
 }
 
 resource "aws_iam_instance_profile" "elasticbeanstalk_service" {
-  name  = "elasticbeanstalk-service-user"
-  roles = ["${aws_iam_role.elasticbeanstalk_service.name}"]
+  name = "elasticbeanstalk-service-user"
+  role = aws_iam_role.elasticbeanstalk_service.name
 }
 
 resource "aws_iam_role" "elasticbeanstalk_service" {
@@ -53,15 +53,14 @@ EOF
 
 resource "aws_iam_policy_attachment" "elasticbeanstalk_service" {
   name       = "elasticbeanstalk-service"
-  roles      = ["${aws_iam_role.elasticbeanstalk_service.id}"]
+  roles      = [aws_iam_role.elasticbeanstalk_service.id]
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSElasticBeanstalkService"
 }
 
 resource "aws_iam_instance_profile" "elasticbeanstalk_instance" {
-  name  = "elasticbeanstalk-ec2-user"
-  roles = ["${aws_iam_role.elasticbeanstalk_instance.name}"]
+  name = "elasticbeanstalk-ec2-user"
+  role = aws_iam_role.elasticbeanstalk_instance.name
 }
-
 
 resource "aws_iam_role" "elasticbeanstalk_instance" {
   name               = "elasticbeanstalk-ec2-role"
@@ -82,10 +81,9 @@ resource "aws_iam_role" "elasticbeanstalk_instance" {
 EOF
 }
 
-
 resource "aws_iam_instance_profile" "elasticbeanstalk_ec2" {
-  name  = "elasticbeanstalk-ec2-user"
-  roles = ["${aws_iam_role.elasticbeanstalk_ec2.name}"]
+  name = "elasticbeanstalk-ec2-user"
+  role = aws_iam_role.elasticbeanstalk_ec2.name
 }
 
 resource "aws_iam_role" "elasticbeanstalk_ec2" {
