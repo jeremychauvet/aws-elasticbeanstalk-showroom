@@ -55,8 +55,5 @@ resource "aws_elastic_beanstalk_environment" "showroom_front_app_production" {
     value     = "t3.micro"
   }
 
-  tags = {
-    Terraform   = "true"
-    Environment = "production"
-  }
+  tags = var.tags
 }

@@ -33,8 +33,5 @@ module "rds" {
   # Observability management.
   enabled_cloudwatch_logs_exports = ["audit", "general"]
 
-  tags = {
-    Terraform   = "true"
-    Environment = "production"
-  }
+  tags = var.tags
 }
