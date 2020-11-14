@@ -234,10 +234,15 @@ Thanks to Github actions, this tool can be used to automatically add a PR commen
 
 #### Development
 
-1. Please install `precommit` : <https://pre-commit.com/>
-2. Please run command `pre-commit install`
-3. Please install `terraform-docs` : <https://github.com/terraform-docs/terraform-docs>
-4. Please install `tflint` : <https://github.com/terraform-linters/tflint>
+Please install :
+
+* `precommit` : <https://pre-commit.com/>
+* *`terraform-docs` : <https://github.com/terraform-docs/terraform-docs>
+* `tflint` : <https://github.com/terraform-linters/tflint>
+* `checkov` : <https://github.com/bridgecrewio/checkov>
+* `coreutils` (MacOS only) : <https://formulae.brew.sh/formula/coreutils>
+
+And run `pre-commit install`.
 
 ### It's show time
 
